@@ -5,6 +5,9 @@ var guessesLeft = 9;
 var guessesSoFar = [];
 var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
+var computerGuess = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+
+
 var updateGuessesLeft = function() {
     document.querySelector('#guessLeft').innerHTML = "Guesses left: " + guessesLeft;
   };
@@ -20,11 +23,9 @@ var reset = function() {
         guessesSoFar.length = 0;
 }
 updateGuessesLeft();
-
 document.onkeyup = function(event) {
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    var computerGuess = computerChoices[Math.floor(Math.random()*computerChoices.length)];
-    guessesSoFar.push(userGuess); 
+     guessesSoFar.push(userGuess); 
     
 
     
